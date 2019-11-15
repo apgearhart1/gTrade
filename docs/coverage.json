@@ -1,0 +1,40 @@
+{
+  "coverage": "0%",
+  "expectCount": 15,
+  "actualCount": 0,
+  "files": {
+    "src/Links/Links.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        3,
+        6,
+        9
+      ]
+    },
+    "src/NaturalLanguageProcessing/Sentiment.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        4,
+        11,
+        16,
+        44
+      ]
+    },
+    "src/serviceWorker.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        13,
+        23,
+        57,
+        101,
+        129
+      ]
+    }
+  }
+}
