@@ -1,2 +1,3 @@
-# EECS448Project3
-Stock news analyzer for EECS 448 Project 3
+# <span style="color:green"> gTrade </span> 
+
+Uses Google Trends and IBM's Natural Language Processor to help the user decide if a stock has been doing well enough recently to be bought or sold.
