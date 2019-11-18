@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import stonk from './stonks.png';
 import './App.css';
 import urlArray from './Links/Links.js';
+import Search from './Search.js';
+
+import {csv} from 'd3';
+import Stocks from './Components/stocks.csv'
+import Stocklist from './Components/stockList.js';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link, withRouter
 } from "react-router-dom";
 
 
-
+//npm module reqs
 const googleTrends = require('google-trends-api');
 const sentiment = require("./NaturalLanguageProcessing/Sentiment.js");
 
 
 function App() {
+
+  useEffect(() => {
+    csv({Stocks}).then(data => {
+        console.log(data);
+    });
+}, []);
+
 
   function About() {
     return (
@@ -24,7 +36,7 @@ function App() {
       </div>
     );
   }
-
+  
 
 /**
  * Calls other functions to determine if stock is trending
@@ -157,68 +169,22 @@ function App() {
       <div id="desc">
       <h2>Choose a stock to get recent trends and analysis!</h2>
       </div>
-        <form id="stocks-chosen">
-        <div>
-        <select multiple id="stocks">
-          <option>Choose a Stock!</option>
-          <option value="Apple">Apple</option>
-          <option value="Google">Google</option>
-          <option value="Paycom">Paycom</option>
-          <option value="Amazon">Amazon</option>
-          <option value="Walmart">Walmart</option>
-          <option value="att">AT&T</option>
-          <option value="GM">General Motors</option>
-          <option value="EM">Exxon Mobil</option>
-          <option value="Costco">Costco</option>
-          <option value="IBM">IBM</option>
-          <option value="Facebook">Facebook</option>
-          <option value="Uber">Uber</option>
-        </select>
-        </div>
-          <br></br>
-          <button type='button' onClick={getTrends}>Submit</button>
-        </form>
+      <Stocklist></Stocklist>
+      <Search></Search>
+      
+      
       </div>
       </header>
 
 
-      <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-
-        <hr />
-
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          
-        </Switch>
-      </div>
-    </Router>
+      
 
 
 
 
     </div>
   );
+  
 }
 
 
