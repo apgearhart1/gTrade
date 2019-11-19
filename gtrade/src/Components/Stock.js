@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
-
+import StocksJSON from './stocks.json';
 function Stock(props){
     return(
-        
-            <div style={{width: 200, border: 'solid'}}>
-            <p>Name: {props.Name}</p>
-            <p>Symbol: {props.Symbol}</p>
-            </div>
-        
+
+            <option>
+            
+            {props.Symbol}
+            
+            </option>
         
 
     )
 }
 export default Stock;
+
+//<div style={{width: 200, border: 'solid'}}>
+//</div>

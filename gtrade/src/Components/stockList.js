@@ -3,17 +3,23 @@ import Stock from './Stock';
 
 
 
-
 function StockList(props) {
+    
     let stocks = props.filteredStocks.map((stock, i) => {
         return <Stock key={i} Symbol={stock.Symbol} Name={stock.Name}/>
     })
-    return(
-        <div>
-                {stocks}
 
-        </div>
-    )
+    
+        return(
+            
+            <div>
+                <select>
+                    {stocks}
+                </select>
+            </div>
+        )
+    
+    
 
 
 
