@@ -2,8 +2,8 @@ import React, { useEffect} from 'react';
 import stonk from './stonks.png';
 import './App.css';
 import urlArray from './Links/Links.js';
-import Search from './Search.js';
-
+import Search from './Components/Search.js';
+import Data from './Data.js';
 import {csv} from 'd3';
 import Stocks from './Components/stocks.csv'
 import Stocklist from './Components/stockList.js';
@@ -13,6 +13,7 @@ import {
   Route,
   Link, withRouter
 } from "react-router-dom";
+import SearchBox from './Components/SearchBox';
 
 
 //npm module reqs
@@ -156,6 +157,8 @@ function App() {
     return number;
   }
 
+  
+  
   return (
     <div className="App">
       <header className="home-header">
@@ -163,13 +166,35 @@ function App() {
       <img src={stonk} alt="Logo Placeholder" align="left"></img>
       <h1 id="title-header">gTrade</h1>
       </div>
-
+      
       <div className="main-content">
 
       <div id="desc">
       <h2>Choose a stock to get recent trends and analysis!</h2>
       </div>
-      <Stocklist></Stocklist>
+      {/* <form id="stocks-chosen">
+        <div>
+        <select multiple id="stocks">
+          <option>Choose a Stock!</option>
+          <option value="Apple">Apple</option>
+          <option value="Google">Google</option>
+          <option value="Paycom">Paycom</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Walmart">Walmart</option>
+          <option value="att">AT&T</option>
+          <option value="GM">General Motors</option>
+          <option value="EM">Exxon Mobil</option>
+          <option value="Costco">Costco</option>
+          <option value="IBM">IBM</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Uber">Uber</option>
+        </select>
+        </div>
+          <br></br>
+          <button type='submit'>Submit</button>
+        </form> */}
+       
+      
       <Search></Search>
       
       
@@ -191,19 +216,4 @@ function App() {
 export default App;
 
 
-// import React from 'react';
 
-// function App() {
-
-//   function sayHello() {
-//     console.log(321);
-//   }
-
-//   return (
-//     <button onClick={sayHello}>
-//       Click me!
-//     </button>
-//   );
-// }
-
-// export default App;
