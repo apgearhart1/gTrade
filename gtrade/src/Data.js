@@ -14,7 +14,7 @@ class Data extends React.Component{
     
     render() {
         
-        return <h1>Data</h1>
+        return <h1>This is the Data screen</h1>
         
       }
 }

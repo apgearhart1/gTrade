@@ -5,10 +5,14 @@ html{
 }
 
 
-.stonk img{
-  width: 12%;
+
+#logo{
+  height: 5%;
+  width: 5%;
+  padding-left: 1%;
   padding-top: 0%;
-  
+  margin: 0, 0, 0, 0;
+  float: left;
 }
 
 .App-logo {
@@ -21,8 +25,10 @@ html{
   font-size: 50px;
   margin-top: 0;
   font-family: 'Russo One', sans-serif;
-  margin-left: 13%;
+  margin-left: 0%;
   text-shadow: 2px 2px rgb(51, 185, 141);
+  margin-left: 7%;
+
 }
 
 .App-header {

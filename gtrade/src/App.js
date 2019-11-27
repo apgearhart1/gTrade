@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react';
-import stonk from './stonks.png';
+import logo from './Logo.png';
 import './App.css';
 import urlArray from './Links/Links.js';
 import Search from './Components/Search.js';
@@ -162,8 +162,12 @@ function App() {
   return (
     <div className="App">
       <header className="home-header">
+        
+        
+
       <div className="stonk">
-      <img src={stonk} alt="Logo Placeholder" align="left"></img>
+
+      <img id="logo" src={logo}></img>
       <h1 id="title-header">gTrade</h1>
       </div>
       

@@ -13,6 +13,7 @@ function StockList(props) {
         return(
             
             <div>
+                
                 <select>
                     {stocks}
                 </select>

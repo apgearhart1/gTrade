@@ -3,6 +3,8 @@ import StocksJSON from './stocks.json';
 function Stock(props){
     return(
 
+            
+            
             <option>
             
             {props.Symbol}
@@ -14,5 +16,3 @@ function Stock(props){
 }
 export default Stock;
 
-//<div style={{width: 200, border: 'solid'}}>
-//</div>
