@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import StocksJSON from './stocks.json';
+import StocksJSON_NEW from './StocksJSON_NEW.json'
 import SearchBox from './SearchBox';
 import Stocks from './Stock';
 import Stocklist from './stockList';
@@ -20,26 +21,37 @@ class Search extends Component{
       super(props);
       this.state = {
         stocks: {StocksJSON},
-        SearchStock: ''
+        stocks2: {StocksJSON_NEW},
+        SearchStock: '',
+        Symbol: 'undefined'
       }
     }
 
     handleInput = (e) => {
 
-      this.setState({ SearchStock: e.target.value})
+      this.setState({ SearchStock: e.target.value});
+
+      
+
+    }
+    handleSelect = (e) => {
+      this.setState({Symbol: e.target.value});
+      console.log(e.target.value);
     }
     onSubmitHandler = (e) => {
       e.preventDefault();
       this.setState({
         showName: true
       });
+      if(this.state.Symbol != 'undefined'){
       this.props.history.push({
         pathname:"../Data",
         state:{//right now these are hard-coded in, you can alter these values for now
-            Symbol: e.target.value.Symbol,
-            Name: e.target.value.Name
+            Symbol: this.state.Symbol,
+
          }
        });
+      }
     }
 
   render() {
@@ -49,13 +61,13 @@ class Search extends Component{
     //localStorage.username = $("#username").val().trim();
   return (
       <div>
-      <SearchBox handleInput={this.handleInput}/>
+      <SearchBox handleInput={this.handleInput.bind(this)}/>
       <div>
       <form>
 
       <div id="stock_list" align="center">
 
-      <Stocklist filteredStocks={filteredStocks} SearchStocks={this.state.SearchStock}/>
+      <Stocklist onChange={this.handleSelect} filteredStocks={filteredStocks} SearchStocks={this.state.SearchStock}/>
 
       </div>
 

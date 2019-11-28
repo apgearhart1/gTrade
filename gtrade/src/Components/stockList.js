@@ -3,24 +3,30 @@ import Stock from './Stock';
 
 
 
-function StockList(props) {
+class StockList extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            Ticker: ''
+        }
+    }
     
-    let stocks = props.filteredStocks.map((stock, i) => {
-        return <Stock key={i} Symbol={stock.Symbol} Name={stock.Name}/>
-    })
 
-    
+    render(){
+        let stocks = this.props.filteredStocks.map((stock, i) => {
+            return <Stock key={i} Symbol={stock.Symbol} Name={stock.Name}/>
+        });
         return(
             
             <div>
                 
-                <select>
+                <select value={this.state.Ticker} onChange={this.props.onChange}>
                     {stocks}
-                </select>
+                    </select>
             </div>
         )
     
-    
+        }
 
 
 

@@ -167,7 +167,7 @@ function App() {
 
       <div className="stonk">
 
-      <img id="logo" src={logo}></img>
+      <img id="logo" alt="{Logo for gTrade}" src={logo}></img>
       <h1 id="title-header">gTrade</h1>
       </div>
       

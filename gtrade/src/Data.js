@@ -4,11 +4,9 @@ class Data extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            Symbol: this.props.location.state.Symbol,
-            Name: this.props.location.state.Name
+            Symbol: this.props.location.state.Symbol
         }
         alert(this.state.Symbol);
-        alert(this.state.Name);
     }
 
     
