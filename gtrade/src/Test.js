@@ -19,7 +19,9 @@ class Test extends React.Component{
         return <h1>Check the console for test results</h1>
         
       }
-
+    /**
+     * checks if our web app has a good connection with the api
+     */
     test_good_connection() {
         axios.get("https://protected-ravine-04165.herokuapp.com/health")
         .then((response) => {
@@ -34,6 +36,9 @@ class Test extends React.Component{
         });
     }
 
+    /**
+     * checks if the /trend route in the API has a response
+     */
     test_trend() {
         axios.get("https://protected-ravine-04165.herokuapp.com/trend")
         .then((response) => {
@@ -44,6 +49,9 @@ class Test extends React.Component{
         });
     }
 
+    /**
+     * checks if the /trends/apple route in the API has a response length of more than 5
+     */
     test_trends_apple() {
         axios.get("https://protected-ravine-04165.herokuapp.com/trends/apple")
         .then((response) => {
@@ -58,6 +66,9 @@ class Test extends React.Component{
         });
     }
 
+    /**
+     * checks if the /sentiment/apple route in the API has a response length of more than 5
+     */
     test_sentimet_blank() {
         axios.get("https://protected-ravine-04165.herokuapp.com/sentiment/apple")
         .then((response) => {
@@ -72,6 +83,9 @@ class Test extends React.Component{
         });
     }
 
+    /**
+     * checks if the /links/apple route in the API has a response
+     */
     test_links_apple() {
         axios.get("https://protected-ravine-04165.herokuapp.com/links/apple")
         .then((response) => {
@@ -81,6 +95,9 @@ class Test extends React.Component{
         });
     }
 
+    /**
+     * checks if the /complete/trends/apple route in the API has a response length of more than 5
+     */
     test_complete_trends_apple() {
         axios.get("https://protected-ravine-04165.herokuapp.com/complete/trends/apple")
         .then((response) => {
