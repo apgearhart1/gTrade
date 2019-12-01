@@ -34,7 +34,13 @@ class Search extends Component{
     // });
     let filteredStocks = StocksJSON.filter((stock) => {
       let k = stock.Name.toLowerCase().indexOf(this.state.SearchStock.toLowerCase()) !== -1;
+      let j = stock.Symbol.toLowerCase().indexOf(this.state.SearchStock.toLowerCase()) !== -1;
       if(k === Object.keys(StocksJSON).indexOf(stock.Symbol)){
+        console.log(stock.Symbol);
+        return stock.Symbol;
+      }
+      else if(j === Object.keys(StocksJSON).indexOf(stock.Symbol)){
+        console.log(stock.Symbol);
         return stock.Symbol;
       }
 
@@ -51,7 +57,7 @@ class Search extends Component{
     }
     onSubmitHandler = (e) => {
       e.preventDefault();
-      if(this.state.Symbol !== 'undefined' || this.state.Symbol !== 'Choose a Stock'){
+      if(this.state.Symbol !== ''){
       this.props.history.push({
         pathname:"../Data",
         state:{//right now these are hard-coded in, you can alter these values for now
