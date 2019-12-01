@@ -10,13 +10,16 @@ class StockList extends React.Component {
             Ticker: ''
         }
     }
-    
 
+    
     render(){
+        
+        
         let stocks = this.props.filteredStocks.map((stock, i) => {
             return <Stock key={i} Symbol={stock.Symbol} Name={stock.Name}/>
         });
         return(
+            
             
             <div id = "list">
                 
@@ -27,7 +30,7 @@ class StockList extends React.Component {
         )
     
         }
-
+    
 
 
 }

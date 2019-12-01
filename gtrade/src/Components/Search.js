@@ -26,28 +26,26 @@ class Search extends Component{
       }
     }
 
+    
+
     handleInput = (e) => {
 
       this.setState({ SearchStock: e.target.value});
-    //   let filteredStocks = StocksJSON.filter((stock) => {
-    //     return stock.Symbol.toLowerCase().includes(this.state.SearchStock.toLowerCase())
-    // });
-    let filteredStocks = StocksJSON.filter((stock) => {
-      let k = stock.Name.toLowerCase().indexOf(this.state.SearchStock.toLowerCase()) !== -1;
-      let j = stock.Symbol.toLowerCase().indexOf(this.state.SearchStock.toLowerCase()) !== -1;
-      if(k === Object.keys(StocksJSON).indexOf(stock.Symbol)){
-        console.log(stock.Symbol);
-        return stock.Symbol;
-      }
-      else if(j === Object.keys(StocksJSON).indexOf(stock.Symbol)){
-        console.log(stock.Symbol);
-        return stock.Symbol;
-      }
+      let filteredStocks = StocksJSON.filter((stock) => {
+        return stock.Symbol.toLowerCase().includes(this.state.SearchStock.toLowerCase())
+    });
+  //   let filteredStocks = StocksJSON.filter((stock) => {
+  //     let k = stock.Name.toLowerCase().indexOf(this.state.SearchStock.toLowerCase()) !== -1;
+  //     if(k === Object.keys(StocksJSON).indexOf(stock.Symbol)){
+
+  //       return stock.Symbol;
+  //     }
+      
 
       
-  });
+  // });
 
-      this.setState({ Symbol: filteredStocks});
+      // this.setState({ Symbol: filteredStocks});
       console.log(filteredStocks);
 
     }
@@ -75,7 +73,7 @@ class Search extends Component{
 
   return (
       <div>
-      <SearchBox handleInput={this.handleInput.bind(this)}/>
+      <SearchBox handleInput={this.handleInput.bind(this)} />
       <div>
       <form>
 
