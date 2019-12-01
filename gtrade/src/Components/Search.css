@@ -1,7 +1,7 @@
 #stock_list{
     align-content: center;
     text-align: center ;
-    margin-left: 35%;
+    margin-left: 23%;
     padding-top: 0%;
     margin-top: 0%;
 
@@ -16,3 +16,6 @@
     
 }
 
+form{
+    margin-top: 5%;
+}

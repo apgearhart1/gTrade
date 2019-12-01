@@ -1,0 +1,16 @@
+#list{
+    margin-bottom: 5%;
+    margin-right: 30%;
+    margin-left: 0%;
+    padding-left: 0%;
+
+}
+
+#list select{
+    background-color: #6e736d;
+    color: rgb(100, 218, 179);
+    outline: none;
+    width: 150px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    font-size: 35px;
+}

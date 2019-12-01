@@ -22,7 +22,7 @@ class Search extends Component{
         stocks: {StocksJSON},
         stocks2: {StocksJSON_NEW},
         SearchStock: '',
-        Symbol: this.handleSelect
+        Symbol: 'AAAU'
       }
     }
 

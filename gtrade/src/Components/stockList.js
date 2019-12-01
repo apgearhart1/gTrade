@@ -1,6 +1,6 @@
 import React from 'react';
 import Stock from './Stock';
-
+import './stockList.css';
 
 
 class StockList extends React.Component {
@@ -18,7 +18,7 @@ class StockList extends React.Component {
         });
         return(
             
-            <div>
+            <div id = "list">
                 
                 <select onChange={this.props.onChange}>
                     {stocks}
