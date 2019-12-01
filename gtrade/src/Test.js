@@ -10,12 +10,13 @@ class Test extends React.Component{
         this.test_trends_apple();
         this.test_sentimet_blank();
         this.test_links_apple();
+        this.test_complete_trends_apple();
     }
 
     
     render() {
         
-        return <h1>This is the Test screen</h1>
+        return <h1>Check the console for test results</h1>
         
       }
 
@@ -61,9 +62,9 @@ class Test extends React.Component{
         axios.get("https://protected-ravine-04165.herokuapp.com/sentiment/apple")
         .then((response) => {
             if(response.data.length > 5) {
-                console.log("TEST: API /sentiment/ returns data - FAILED");
+                console.log("TEST: API /sentiment/apple returns data - FAILED");
             } else {
-                console.log("TEST: API /sentiment/ returns data - PASSED");
+                console.log("TEST: API /sentiment/apple returns data - PASSED");
             }
             
         }).catch(() => {
@@ -75,9 +76,21 @@ class Test extends React.Component{
         axios.get("https://protected-ravine-04165.herokuapp.com/links/apple")
         .then((response) => {
             console.log("TEST: API /links/apple returns data - PASSED");
-            
         }).catch(() => {
-            console.log("TEST: API /sentiment/apple returns data - FAILED");
+            console.log("TEST: API /links/apple returns data - FAILED");
+        });
+    }
+
+    test_complete_trends_apple() {
+        axios.get("https://protected-ravine-04165.herokuapp.com/complete/trends/apple")
+        .then((response) => {
+            if(response.data.length > 5) {
+                console.log("TEST: API /complete/trends/apple returns data - PASSED");
+            } else {
+                console.log("TEST: API /complete/trends/apple returns data - FAILED");
+            }
+        }).catch(() => {
+            console.log("TEST: API /complete/trends/apple returns data - FAILED");
         });
     }
 

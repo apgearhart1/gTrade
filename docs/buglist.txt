@@ -1,0 +1,9 @@
+Bug List
+
+1) If you are on the the homescreen of our web app and you type out enough of the company name to the point that
+   there is only one option left in the drop down, then you will not be able to select that item to get analysis
+   on it.
+2) When running our web app on google chrome there is a CORS error when Data.js makes its http request. To fix this
+   one must open their google chrom in disabled web security mode.
+3) On the web app, if you select 'Submit' but you have not selected a stock yet our app lets you go to the next page
+   even though there should be an error.
