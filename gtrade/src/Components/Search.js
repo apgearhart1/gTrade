@@ -27,32 +27,35 @@ class Search extends Component{
     }
 
     
-
+    /**
+     * Returns an array of search results of from the stock list
+     * @param e - event variable
+     * @returns Array of search results to be printed
+     */
     handleInput = (e) => {
-
       this.setState({ SearchStock: e.target.value});
       let filteredStocks = StocksJSON.filter((stock) => {
         return stock.Symbol.toLowerCase().includes(this.state.SearchStock.toLowerCase())
     });
-  //   let filteredStocks = StocksJSON.filter((stock) => {
-  //     let k = stock.Name.toLowerCase().indexOf(this.state.SearchStock.toLowerCase()) !== -1;
-  //     if(k === Object.keys(StocksJSON).indexOf(stock.Symbol)){
-
-  //       return stock.Symbol;
-  //     }
-      
-
-      
-  // });
-
-      // this.setState({ Symbol: filteredStocks});
+  
       console.log(filteredStocks);
-
     }
+
+    /**
+     * Sets the state variable Symbol to the currently selected option in the dropdown menu
+     * @param e - event variable
+     * @returns none
+     */
     handleSelect = (e) => {
       this.setState({Symbol: e.target.value});
       console.log(e.target.value);
     }
+
+    /**
+     * Takes the current Symbol variable and 'pushes' it to the Data.js page to be analyzed
+     * @param e - event variable
+     * @returns Change of current page and the current Symbol
+     */
     onSubmitHandler = (e) => {
       e.preventDefault();
       if(this.state.Symbol !== ''){

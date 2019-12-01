@@ -19,8 +19,11 @@ class Test extends React.Component{
         return <h1>Check the console for test results</h1>
         
       }
-    /**
+
+      /**
      * checks if our web app has a good connection with the api
+     * @param none
+     * @returns console.log statement if there is a connection or not
      */
     test_good_connection() {
         axios.get("https://protected-ravine-04165.herokuapp.com/health")
@@ -35,9 +38,10 @@ class Test extends React.Component{
             console.log("TEST: React App has good connection to API - FAILED");
         });
     }
-
     /**
      * checks if the /trend route in the API has a response
+     * @param none
+     * @returns console.log statement if there is a connection or not
      */
     test_trend() {
         axios.get("https://protected-ravine-04165.herokuapp.com/trend")
@@ -48,9 +52,10 @@ class Test extends React.Component{
             console.log("TEST: API /trend returns data - FAILED");
         });
     }
-
     /**
      * checks if the /trends/apple route in the API has a response length of more than 5
+     * @param none
+     * @returns console.log statement if there is a connection or not
      */
     test_trends_apple() {
         axios.get("https://protected-ravine-04165.herokuapp.com/trends/apple")
@@ -65,9 +70,10 @@ class Test extends React.Component{
             console.log("TEST: API /trends/apple returns data - FAILED");
         });
     }
-
     /**
      * checks if the /sentiment/apple route in the API has a response length of more than 5
+     * @param none
+     * @returns console.log statement if there is a connection or not
      */
     test_sentimet_blank() {
         axios.get("https://protected-ravine-04165.herokuapp.com/sentiment/apple")
@@ -82,9 +88,10 @@ class Test extends React.Component{
             console.log("TEST: API /sentiment/apple returns data - PASSED");
         });
     }
-
     /**
      * checks if the /links/apple route in the API has a response
+     * @param none
+     * @returns console.log statement if there is a connection or not
      */
     test_links_apple() {
         axios.get("https://protected-ravine-04165.herokuapp.com/links/apple")
@@ -94,9 +101,10 @@ class Test extends React.Component{
             console.log("TEST: API /links/apple returns data - FAILED");
         });
     }
-
     /**
      * checks if the /complete/trends/apple route in the API has a response length of more than 5
+     * @param none
+     * @returns console.log statement if there is a connection or not
      */
     test_complete_trends_apple() {
         axios.get("https://protected-ravine-04165.herokuapp.com/complete/trends/apple")

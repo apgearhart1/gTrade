@@ -14,7 +14,7 @@ class StockList extends React.Component {
     
     render(){
         
-        
+        //takes the given input from the search box and returns the appropriate stock symbols
         let stocks = this.props.filteredStocks.map((stock, i) => {
             return <Stock key={i} Symbol={stock.Symbol} Name={stock.Name}/>
         });

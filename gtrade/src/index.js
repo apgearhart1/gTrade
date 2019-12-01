@@ -6,11 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import Data from './Data';
 import Test from './Test';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+//router that allows the page to change screen
 const routing = (
     <Router>
       <div>
-
-      
         <Route exact path="/" component={App} />
         <Route path="/Data" component={Data} />
         <Route path="/Test" component={Test}/>

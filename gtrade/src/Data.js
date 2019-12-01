@@ -7,7 +7,12 @@ class Data extends React.Component{
         this.state ={
             Symbol: this.props.location.state.Symbol
         }
-
+        
+        /**
+         * Makes an API call to the gTrade API which calls Google Trends, News API, and IBM's natural language processor
+         * @param this.state.Symbol - symbol from Search.js after the submit button is clicked
+         * @returns A string of values that indicate if the stock is trending or not and if there is a positive or negative sentiment on it.
+         */
         axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:3000'
         axios.get("https://protected-ravine-04165.herokuapp.com/complete/trends/" + this.state.Symbol)
         .then((response) => {
@@ -31,7 +36,6 @@ class Data extends React.Component{
             else if(score < -.5 && score >= -1){
                 alert(this.state.Symbol + " outlook is not looking good, we don't recommend you buy it!  \nReceived a score of " + score);
             }
-            
             this.data = response.data;
             //this.render();
             //ReactDOM.render(<div>{89}</div>);
