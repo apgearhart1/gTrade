@@ -20,7 +20,7 @@ class StockList extends React.Component {
             
             <div>
                 
-                <select value={this.state.Ticker} onChange={this.props.onChange}>
+                <select onChange={this.props.onChange}>
                     {stocks}
                     </select>
             </div>

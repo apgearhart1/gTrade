@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import StocksJSON from './stocks.json';
 import StocksJSON_NEW from './StocksJSON_NEW.json'
 import SearchBox from './SearchBox';
-import Stocks from './Stock';
 import Stocklist from './stockList';
 import './Search.css';
 import {
@@ -23,15 +22,27 @@ class Search extends Component{
         stocks: {StocksJSON},
         stocks2: {StocksJSON_NEW},
         SearchStock: '',
-        Symbol: 'undefined'
+        Symbol: this.handleSelect
       }
     }
 
     handleInput = (e) => {
 
       this.setState({ SearchStock: e.target.value});
+    //   let filteredStocks = StocksJSON.filter((stock) => {
+    //     return stock.Symbol.toLowerCase().includes(this.state.SearchStock.toLowerCase())
+    // });
+    let filteredStocks = StocksJSON.filter((stock) => {
+      let k = stock.Name.toLowerCase().indexOf(this.state.SearchStock.toLowerCase()) !== -1;
+      if(k === Object.keys(StocksJSON).indexOf(stock.Symbol)){
+        return stock.Symbol;
+      }
 
       
+  });
+
+      this.setState({ Symbol: filteredStocks});
+      console.log(filteredStocks);
 
     }
     handleSelect = (e) => {
@@ -40,10 +51,7 @@ class Search extends Component{
     }
     onSubmitHandler = (e) => {
       e.preventDefault();
-      this.setState({
-        showName: true
-      });
-      if(this.state.Symbol != 'undefined'){
+      if(this.state.Symbol !== 'undefined' || this.state.Symbol !== 'Choose a Stock'){
       this.props.history.push({
         pathname:"../Data",
         state:{//right now these are hard-coded in, you can alter these values for now
@@ -58,7 +66,7 @@ class Search extends Component{
     let filteredStocks = StocksJSON.filter((stock) => {
         return stock.Name.toLowerCase().includes(this.state.SearchStock.toLowerCase()) || stock.Symbol.toLowerCase().includes(this.state.SearchStock.toLowerCase())
     })
-    //localStorage.username = $("#username").val().trim();
+
   return (
       <div>
       <SearchBox handleInput={this.handleInput.bind(this)}/>

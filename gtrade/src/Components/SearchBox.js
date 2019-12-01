@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import './SearchBox.css';
 
 function SearchBox(props){
+
+    
+
+
     return(
         <div id="box">
 
