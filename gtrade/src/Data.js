@@ -9,31 +9,29 @@ class Data extends React.Component{
             Symbol: this.props.location.state.Symbol
         }
 
-        // let config = {
-        // headers: {
-        //     header1: value,
-        // }
-        // }
-        
-        // let data = {
-        // 'HTTP_CONTENT_LANGUAGE': self.language
-        // }
-        axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
-        axios.get("https://protected-ravine-04165.herokuapp.com/trends/" + this.state.Symbol)
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+        axios.get("https://protected-ravine-04165.herokuapp.com/complete/trends/" + this.state.Symbol)
         .then((response) => {
-            console.log(response);
-            alert(response);
-        })
-        alert(this.state.Symbol);
-        //alert("1\n2");
+            console.log(response.data);
+            alert(response.data);
+            this.data = response.data;
+            //this.render();
+            //ReactDOM.render(<div>{89}</div>);
+        });
+
     }
 
     
     render() {
-        
-        return <h1>This is the Data screen</h1>
-        
-      }
+        const timer = setTimeout(() => {
+            return <h1>This is the Data screen</h1>;
+          }, 5000);
+          return () => clearTimeout(timer);
+    }
+
+    delayed() {
+        return 1;
+    }
 }
 
 export default Data;
