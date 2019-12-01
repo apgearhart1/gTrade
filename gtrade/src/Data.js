@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import './Data.css';
 class Data extends React.Component{
     constructor(props){
         super(props);
