@@ -27,13 +27,13 @@ class Data extends React.Component{
             else if(score > 0 && score <= .5){
                 alert(this.state.Symbol + " outlook is looking somewhat positive, you might want to look into it!  \nReceived a score of " + score);
             }
-            else if(score > .5 && score <= 1){
+            else if(score > .5){
                 alert(this.state.Symbol + " outlook is very positive, we recommend you buy it soon!!  \nReceived a score of " + score);
             }
             else if(score < 0 && score >= -.5){
                 alert(this.state.Symbol + " outlook is looking somewhat negative, you might not want to buy it!  \nReceived a score of " + score);
             }
-            else if(score < -.5 && score >= -1){
+            else if(score < -.5){
                 alert(this.state.Symbol + " outlook is not looking good, we don't recommend you buy it!  \nReceived a score of " + score);
             }
             this.data = response.data;

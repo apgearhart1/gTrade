@@ -1,0 +1,6 @@
+{
+  "source": ".",
+  "destination": "docs",
+  "includes": ["^./src", "^./src/Components", "^./src/Links", "^./src/NaturalLanguageProcessing"],
+  "plugins": [{"name": "esdoc-standard-plugin"}]
+}
