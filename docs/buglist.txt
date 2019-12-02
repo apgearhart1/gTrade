@@ -7,3 +7,5 @@ Bug List
    one must open their google chrom in disabled web security mode.
 3) On the web app, if you select 'Submit' but you have not selected a stock yet our app lets you go to the next page
    even though there should be an error.
+4) When a company is found to be trending the API may try and send a response after it has already sent one. This does
+   not cause any error on the client side but the API throws an error.
